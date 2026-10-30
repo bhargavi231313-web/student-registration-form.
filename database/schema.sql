@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS student_registration
+  CHARACTER SET utf8mb4
+  COLLATE utf8mb4_unicode_ci;
+
+USE student_registration;
+
+CREATE TABLE IF NOT EXISTS students (
+    id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    full_name VARCHAR(120) NOT NULL,
+    email VARCHAR(254) NOT NULL UNIQUE,
+    phone VARCHAR(30) NOT NULL,
+    course VARCHAR(120) NOT NULL,
+    registered_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
